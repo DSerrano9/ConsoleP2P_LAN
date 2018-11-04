@@ -1,6 +1,6 @@
 ------------------------------------------------------
 
-**ConsoleP2PApp_LAN.exe**
+**P2PConsoleApp_LAN.exe**
 
 Type: C# Console Application 
 
@@ -26,11 +26,11 @@ Start
 
 1.) Using CMD.exe, type the path and then press enter. 
 
-e.g. "cd C:\Users\\...\Debug"
+e.g. "cd C:\\...\\Debug"
 
 2.) Type the application name and arguments and then press enter. 
 
-e.g. "ConsoleP2PApp_LAN.exe listen 127.0.0.1:49152"
+e.g. "P2PConsoleApp_LAN.exe listen 127.0.0.1:49152"
 
 Shutdown
 
