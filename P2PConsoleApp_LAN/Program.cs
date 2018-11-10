@@ -231,10 +231,10 @@ namespace P2PConsoleApp_LAN
                 else if (!ReceiverTask.IsCompleted)
                 {
                     ShutdownReceiver();
-                }
-                NetworkStream.Dispose();
-            }   
-            
+                }               
+            }
+            NetworkStream?.Dispose();
+
             if (e != null)
             {
                 Console.WriteLine("Error: " + e.Message);
@@ -264,7 +264,9 @@ namespace P2PConsoleApp_LAN
                 TokenSource = new CancellationTokenSource();
                 ReceiverTask = Task.Delay(1000).ContinueWith(
                     (antecedent) =>
-                    { Receiver(TokenSource.Token); },
+                    {
+                        Receiver(TokenSource.Token);
+                    },
                     TaskContinuationOptions.LongRunning).ContinueWith(
                     (antecedent) =>
                     {
@@ -275,7 +277,10 @@ namespace P2PConsoleApp_LAN
                 Sender();
                 Shutdown();
             }
-            catch (Exception e) { Shutdown(e); }
+            catch (Exception e)
+            {
+                Shutdown(e);
+            }
         }
     }
 }
